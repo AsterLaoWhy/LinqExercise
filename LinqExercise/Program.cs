@@ -123,11 +123,12 @@ namespace LinqExercise
             Console.WriteLine(yoeSum);
             Console.WriteLine($"------------------------------\n");
             //TODO: Now print the Average of the employees' YearsOfExperience if their YOE is less than or equal to 10 AND Age is greater than 35.
-            var avgYOE = yoeSum / yearExp.Count();
+            var avgYOE = employees.Select(i=>i.YearsOfExperience).Average();
             Console.WriteLine(avgYOE);
             Console.WriteLine($"------------------------------\n");
             //TODO: Add an employee to the end of the list without using employees.Add()
-            employees[employees.Count()-1] = new Employee ("Jon", "Rylatt", 29, 10);
+            employees.Add(new Employee("Jon", "Rylatt", 29, 3));
+            foreach (var i in employees) Console.WriteLine(i.FirstName);
             Console.WriteLine();
 
             Console.ReadLine();
